@@ -1,0 +1,21 @@
+#download fastq file
+wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR304/009/ERR3046949/ERR3046949.fastq.gz"
+
+#unzip fastq file
+gunzip ERR3046949.fastq.gz
+
+#quality control: i will use fastqc programm to check the quality of the reads
+fastqc ERR3046949.fastq
+
+#i will open the file from fastqc with firefox(html file)
+firefox ERR3046949_fastqc.html
+
+#mapping:indexing is ready and i will use star to map the reads to the reference genome
+FASTQ1=ERR3046949; STAR --runThreadN 10 --genomeDir ~/Group_Project/mm10ref/ --readFilesIn $FASTQ1.fastq --outSAMtype BAM SortedByCoordinate --outFileNamePrefix $FASTQ1 --outSAMstrandField intronMotif
+
+#htseq:(Given a file with aligned sequencing reads and a list of genomic features, a common task is to count how many reads map to each feature.)
+htseq-count -f bam ERR3046949Aligned.sortedByCoord.out.bam  ~/Group_Project/mm10.ncbiRefSeq.gtf > ERR3046949.counts
+
+
+
+
