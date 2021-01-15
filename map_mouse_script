@@ -1,3 +1,5 @@
+#here is the data https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-7561/samples/?keywords=rna+seq+mouse&organism=Mus+musculus&exptype%5B%5D=%22rna+assay%22&exptype%5B%5D=%22sequencing+assay%22&array=
+#i chose ERR3046949 sample
 #download fastq file
 wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR304/009/ERR3046949/ERR3046949.fastq.gz"
 
