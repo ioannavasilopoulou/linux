@@ -1,4 +1,4 @@
-#how to download fastg file
+#how to download fastq file
 #go to firefox and search ncbi covid-19
 #chose a file and go to bash
 #run the command below
